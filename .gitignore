@@ -23,3 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 .DS_Store
+.idea/
+.DS_Store
+node_modules/
+target/
+build/
+.gradle/
