@@ -5,20 +5,36 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(nullable = false)
     private String title;
-    @Column(length= 2000)
+
+    @Column(length = 2000)
     private String content;
-    @Column(nullable =false)
+
+    @Column(nullable = false)
     private String author;
 
+    private LocalDateTime createdAt;
+
+    public Post(String title, String content, String author) {
+        this.title = title;
+        this.content = content;
+        this.author = author;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+    }
 }
