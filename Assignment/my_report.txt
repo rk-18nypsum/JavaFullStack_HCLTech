@@ -1,0 +1,3 @@
+Book[1001, Clean Code, 2008, Robert Martin] - Available
+Magazine[1002, Java Magazine, 2023, Issue 42] - Available
+DVD[1003, Inception, 2010, 148 mins] - Available
